@@ -8,8 +8,8 @@
         "name": "micschk"
     }],
     "require": {
-        "silverstripe/framework": "~3.0",
-		"silverstripe/cms": "~3.0"
+		"silverstripe/cms": "~3.0",
+        "bummzack/sortablefile": "dev-master"
     },
 	"extra": {
 		"installer-name": "featuredimages"
