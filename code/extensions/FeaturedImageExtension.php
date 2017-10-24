@@ -61,7 +61,8 @@ class FeaturedImageExtension extends SiteTreeExtension
         // Perform migrations (the legacy field will be left in the DB by the ORM)
         $class = $this->owner->class;
         $baseclass = $this->ownerBaseClass;
-        if ($baseclass == $class) {
+        // check if table exists before attempting update, else this may throw an error on new installs
+        if ($baseclass == $class && array_search($baseclass, DB::table_list())) {
             // if(in_array('FeaturedImageExtension', Config::inst()->get($class, 'extensions'))){
             $rows = DB::query('SELECT * FROM "' . $baseclass . '"');
             $altered = false;
