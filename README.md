@@ -28,7 +28,7 @@ Add to config.yml (max_featured_images is optional, default = 1):
 ```yaml
 Page:
   extensions:
-    - 'FeaturedImageExtension'
+    - '\Restruct\SilverStripe\FeaturedImages\FeaturedImageExtension'
   max_featured_images: 3
 ```
 
