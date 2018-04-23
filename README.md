@@ -3,32 +3,39 @@ Extension to quickly add a featured image to a pagetype
 
 ## Features
 
-* Adds a simple uploadfield to a page for a has_one featuredimage
+* Adds a simple uploadfield to a page for a featuredimage
 
-![](images/screenshots/featuredimg.png)
+![](docs/assets/single_image.png)
+
+or set of featured images (max amount configurable)
+
+![](docs/assets/multiple_images.png)
 
 ## Requirements
 
-* SilverStripe 3.0 or newer
-
+* SilverStripe 4.1 or newer
 
 ## Installation
 
 ```
-composer require micschk/silverstripe-featuredimages dev-master
+composer require restruct/silverstripe-featuredimages dev-master
 ```
 
 ## Apply extension to desired pagetypes:
 
-Add to config.yml:
+Add to config.yml (max_featured_images is optional, default = 1):
 
 ```yaml
 Page:
   extensions:
     - 'FeaturedImageExtension'
+  max_featured_images: 3
 ```
 
 And use in templates as 
 ```
-$FeaturedImage
+$PageImage
 ```
+or
+```
+<% loop $PageImages %>$Me<% end_loop %>

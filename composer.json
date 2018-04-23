@@ -1,15 +1,17 @@
 {
-    "name": "micschk/silverstripe-featuredimages",
-    "description": "Extension to quickly add a featured image to a pagetype",
-    "type": "silverstripe-module",
+    "name": "restruct/silverstripe-featuredimages",
+    "description": "Extension to quickly add a (set of) featured image(s) to a pagetype",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "image"],
     "authors": [
-    {
-        "name": "micschk"
-    }],
+      {
+        "name": "Restruct web & apps",
+        "email": "dev@restruct.nl"
+      }
+    ],
     "require": {
-		"silverstripe/cms": "~3.0",
-        "bummzack/sortablefile": "~1.2"
+		"silverstripe/cms": "^4.0",
+        "bummzack/sortablefile": "^2.0"
     },
 	"extra": {
 		"installer-name": "featuredimages"
