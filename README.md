@@ -9,7 +9,7 @@ Extension to quickly add a featured image to a pagetype
 
 or set of featured images (max amount configurable)
 
-![multiple sortable images](https://raw.githubusercontent.com/restruct/silverstripe-featuredimages/master/docs/assets/multiple_images.png)
+![multiple sortable images](https://github.com/restruct/silverstripe-featuredimages/blob/e1f10bf4ff6dfd7dcd4613fd2c708876d9593fd1/docs/assets/multiple_images.png)
 
 ## Requirements
 
