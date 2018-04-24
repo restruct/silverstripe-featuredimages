@@ -38,4 +38,6 @@ $PageImage
 ```
 or
 ```
-<% loop $PageImages %>$Me<% end_loop %>
+<% loop $PageImages %>
+    $Me
+<% end_loop %>
