@@ -1,0 +1,3 @@
+mappings:
+  FeaturedImageExtension: Restruct\SilverStripe\FeaturedImages\FeaturedImageExtension
+  FeaturedImageUpdateTask: Restruct\SilverStripe\FeaturedImages\FeaturedImageUpdateTask

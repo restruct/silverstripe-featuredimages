@@ -1,20 +1,28 @@
 {
-    "name": "restruct/silverstripe-featuredimages",
-    "description": "Extension to quickly add a (set of) featured image(s) to a pagetype",
-    "type": "silverstripe-vendormodule",
-    "keywords": ["silverstripe", "image"],
-    "authors": [
-      {
-        "name": "Restruct web & apps",
-        "email": "dev@restruct.nl"
-      }
-    ],
-    "require": {
-		"silverstripe/cms": "^4.0",
-        "bummzack/sortablefile": "^2.0"
-    },
-	"extra": {
-		"installer-name": "featuredimages"
-	}
-    
+  "name": "restruct/silverstripe-featuredimages",
+  "description": "Extension to quickly add a (set of) featured image(s) to a pagetype",
+  "type": "silverstripe-vendormodule",
+  "keywords": [
+    "silverstripe",
+    "image"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Restruct web & apps",
+      "email": "dev@restruct.nl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Restruct\\SilverStripe\\FeaturedImages\\": "src/"
+    }
+  },
+  "require": {
+    "silverstripe/cms": "^4.0",
+    "bummzack/sortablefile": "^2.0"
+  },
+  "extra": {
+    "installer-name": "featuredimages"
+  }
 }
