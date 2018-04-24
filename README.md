@@ -5,11 +5,11 @@ Extension to quickly add a featured image to a pagetype
 
 * Adds a simple uploadfield to a page for a featuredimage
 
-![](docs/assets/single_image.png)
+![One/single image](https://raw.githubusercontent.com/restruct/silverstripe-featuredimages/master/docs/assets/single_image.png)
 
 or set of featured images (max amount configurable)
 
-![](docs/assets/multiple_images.png)
+![multiple sortable images](https://raw.githubusercontent.com/restruct/silverstripe-featuredimages/master/docs/assets/multiple_images.png)
 
 ## Requirements
 
