@@ -24,12 +24,19 @@ class FeaturedImageExtension extends SiteTreeExtension
     private static $many_many = array(
         'FeaturedImages' => Image::class,
     );
+    
     // this adds the SortOrder field to the relation table.
     // Please note that the key (in this case 'Images')
     // has to be the same key as in the $many_many definition!
     private static $many_many_extraFields = array(
         'FeaturedImages' => array('SortOrder' => 'Int')
     );
+
+    // New SS4 publishing mechanism
+    private static $owns = [
+        'FeaturedImages',
+    ];
+    
     // Use this in your templates to get the correctly sorted images
     // OR use $FeaturedImages.Sort('SortOrder') in your templates which
     // will unclutter your PHP classes
