@@ -11,7 +11,11 @@
     {
       "name": "Restruct web & apps",
       "email": "dev@restruct.nl"
-    }
+    },
+      {
+          "name": "PatJnr",
+          "email": "patrick@chitosystems.com"
+      }
   ],
   "autoload": {
     "psr-4": {
