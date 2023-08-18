@@ -64,7 +64,7 @@ class FeaturedImageExtension extends SiteTreeExtension
                 _t("FeaturedImage.FeaturedImages", "Page Image(s)")),
             "Content"
         );
-        $uploadField->setFolderName(Config::inst()->get($this->owner->class, 'upload_folder'));
+        $uploadField->setFolderName(Config::inst()->get($this->owner->ClassName, 'upload_folder'));
         $uploadField->setAllowedFileCategories('image/supported');
         $uploadField->setAllowedMaxFileNumber(Config::inst()->get(get_class($this->owner), 'max_featured_images'));
 
