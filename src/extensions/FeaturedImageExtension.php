@@ -2,6 +2,8 @@
 
 namespace Restruct\SilverStripe\FeaturedImages;
 
+use Bummzack\SortableFile\Forms\SortableUploadField;
+use SilverStripe\Forms\FormField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\DataObject;
@@ -24,16 +26,16 @@ class FeaturedImageExtension extends Extension
      */
     private static $upload_folder = 'pageimages';
 
-    private static $many_many = array(
+    private static $many_many = [
         'FeaturedImages' => Image::class,
-    );
+    ];
 
     // this adds the SortOrder field to the relation table.
     // Please note that the key (in this case 'Images')
     // has to be the same key as in the $many_many definition!
-    private static $many_many_extraFields = array(
-        'FeaturedImages' => array('SortOrder' => 'Int')
-    );
+    private static $many_many_extraFields = [
+        'FeaturedImages' => ['SortOrder' => 'Int']
+    ];
 
     // New SS4 publishing mechanism
     private static $owns = [
@@ -58,19 +60,19 @@ class FeaturedImageExtension extends Extension
         return $this->owner->PageImage();
     }
 
-    function updateCMSFields(FieldList $fields)
+    public function updateCMSFields(FieldList $fields)
     {
         // Should this be updated to the new FileHandleField class?
         // Injector::inst()->create(FileHandleField::class, 'Files')
-        $uploadFieldClass = class_exists('Bummzack\SortableFile\Forms\SortableUploadField')
-            ? 'Bummzack\SortableFile\Forms\SortableUploadField' : UploadField::class;
+        $uploadFieldClass = class_exists(SortableUploadField::class)
+            ? SortableUploadField::class : UploadField::class;
         $featImgField = $uploadFieldClass::create("FeaturedImages", _t("FeaturedImage.FeaturedImages", "Page Image(s)"));
         $featImgField->setFolderName(Config::inst()->get($this->owner->ClassName, 'upload_folder'));
         $featImgField->setAllowedFileCategories('image/supported');
-        $featImgField->setAllowedMaxFileNumber(Config::inst()->get(get_class($this->owner), 'max_featured_images'));
+        $featImgField->setAllowedMaxFileNumber(Config::inst()->get($this->owner::class, 'max_featured_images'));
 
         // if we have a Content field, insert before that -- else just append to Main tab
-        if($fields->dataFieldByName("Content")) {
+        if($fields->dataFieldByName("Content") instanceof FormField) {
             $fields->insertBefore("Content", $featImgField);
         } else {
             $fields->addFieldToTab('Root.Main', $featImgField);
@@ -82,11 +84,9 @@ class FeaturedImageExtension extends Extension
     public function ContentHasFeaturedImageShortcode()
     {
         if ($this->owner->Content) {
-            if (stripos($this->owner->Content, '[featuredimage]') !== false) {
-                return true;
-            }
-            return false;
+            return stripos((string) $this->owner->Content, '[featuredimage]') !== false;
         }
+
         return null; //eg unknown
     }
 
@@ -97,7 +97,6 @@ class FeaturedImageExtension extends Extension
      *
      * @param boolean $includeOwn include own images in result
      * @param boolean $recursively get from childrens children as well (and their children, etc)
-     * @return DataList
      */
     public function FirstFeaturedImagesUpTheHierarchy($includeOwn = false, $recursively = false): DataList
     {
@@ -105,6 +104,7 @@ class FeaturedImageExtension extends Extension
         if (boolval($includeOwn) && $this->owner->FeaturedImages()->count()) {
             return $this->owner->FeaturedImages();
         }
+
         // if no Parents hierarchy available to traverse, return own IF self included, empty result otherwise
         if ( ! $this->owner->hasExtension(Hierarchy::class)) {
             return boolval($includeOwn) ? $this->owner->FeaturedImages() : $this->owner->FeaturedImages()->filter('ID',-1); // return empty result
@@ -130,7 +130,6 @@ class FeaturedImageExtension extends Extension
      *
      * @param boolean $includeOwn include own images in result
      * @param boolean $recursively get from childrens children as well (and their children, etc)
-     * @return DataList
      */
     public function DescendantsFeaturedImages($includeOwn = false, $recursively = false): DataList
     {
