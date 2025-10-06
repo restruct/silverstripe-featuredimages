@@ -3,12 +3,15 @@
 namespace Restruct\SilverStripe\FeaturedImages;
 
 
+use Override;
 use SilverStripe\Dev\BuildTask;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\ClassInfo;
 
 use SilverStripe\ORM\DB;
-
+use SilverStripe\PolyExecution\PolyOutput;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
 
 
 class FeaturedImageUpdateTask extends BuildTask
@@ -23,21 +26,16 @@ class FeaturedImageUpdateTask extends BuildTask
      * @var string $title Shown in the overview on the {@link TaskRunner}
      * HTML or CLI interface. Should be short and concise, no HTML allowed.
      */
-    protected $title = 'Migrate legacy has_one featured image to many_many relation';
+    protected string $title = 'Migrate legacy has_one featured image to many_many relation';
 
     /**
      * @var string $description Describe the implications the task has,
      * and the changes it makes. Accepts HTML formatting.
      */
-    protected $description = 'Between v1 & v2, featured image switched to a many_many, v2 auto-migrated existing has_ones. In v3 this functionality has been moved to a build task.';
+    protected static string $description = 'Between v1 & v2, featured image switched to a many_many, v2 auto-migrated existing has_ones. In v3 this functionality has been moved to a build task.';
 
-    /**
-     * Migrate legacy has_one featured image to many_many relation
-     *
-     * @param HTTPRequest $request
-     * @return
-     */
-    public function run($request)
+    #[Override]
+    protected function execute(InputInterface $input, PolyOutput $output): int
     {
         // @TODO: the below function needs to be rewritten to loop over all DataObjects which have been extended with FeaturedImage for this task to actually work.
         die("FeaturedImageUpdateTask hasn't actually been fully implemented; run() needs to be rewritten to loop over all DataObjects which have been extended with FeaturedImage for this task to actually work");

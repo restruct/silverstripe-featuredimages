@@ -3,16 +3,15 @@
 namespace Restruct\SilverStripe\FeaturedImages;
 
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Core\Extension;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\Hierarchy\Hierarchy;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Core\Config\Config;
-use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\DataList;
 
-class FeaturedImageExtension
-    extends DataExtension
+class FeaturedImageExtension extends Extension
 {
 
     /**

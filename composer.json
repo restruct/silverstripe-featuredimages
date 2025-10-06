@@ -15,8 +15,8 @@
   },
   "require": {
     "silverstripe/vendor-plugin": "^2",
-    "silverstripe/cms": "^4 || ^5",
-    "bummzack/sortablefile": "^2.2"
+    "silverstripe/cms": "^6",
+    "bummzack/sortablefile": "^3"
   },
   "extra": {
     "installer-name": "featuredimages"

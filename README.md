@@ -13,12 +13,12 @@ or set of featured images (max amount configurable)
 
 ## Requirements
 
-* SilverStripe 4.1 or newer
+* SilverStripe 6 or newer
 
 ## Installation
 
 ```
-composer require restruct/silverstripe-featuredimages dev-master
+composer require restruct/silverstripe-featuredimages 
 ```
 
 ## Apply extension to desired pagetypes:
