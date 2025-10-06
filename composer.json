@@ -14,7 +14,7 @@
     }
   },
   "require": {
-    "silverstripe/vendor-plugin": "^2",
+    "silverstripe/vendor-plugin": "^3",
     "silverstripe/cms": "^6",
     "bummzack/sortablefile": "^3"
   },
