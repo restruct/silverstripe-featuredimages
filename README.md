@@ -26,8 +26,8 @@ composer require restruct/silverstripe-featuredimages
 
 | Branch | Module version | Silverstripe | PHP |
 |--------|----------------|--------------|-----|
-| `main` | `5.x` | `^4 \|\| ^5 \|\| ^6` | `^7.4 \|\| ^8.0` |
-| (tags only) | `4.x` | `^6` | `^8.3` |
+| `main` | `4.1.x` and up | `^4 \|\| ^5 \|\| ^6` | `^7.4 \|\| ^8.0` |
+| (tags only) | `4.0.x` | `^6` | `^8.3` |
 | (tags only) | `3.x` | `^4 \|\| ^5` | `^7.1 \|\| ^8.0` |
 | (tags only) | `2.x` | `^3` | `^5.6 \|\| ^7.0` |
 
