@@ -13,13 +13,29 @@ or set of featured images (max amount configurable)
 
 ## Requirements
 
-* SilverStripe 6 or newer
+* Silverstripe 4, 5 or 6
+* PHP 7.4 or newer
 
 ## Installation
 
 ```
-composer require restruct/silverstripe-featuredimages 
+composer require restruct/silverstripe-featuredimages
 ```
+
+## Version compatibility
+
+| Branch | Module version | Silverstripe | PHP |
+|--------|----------------|--------------|-----|
+| `main` | `5.x` | `^4 \|\| ^5 \|\| ^6` | `^7.4 \|\| ^8.0` |
+| (tags only) | `4.x` | `^6` | `^8.3` |
+| (tags only) | `3.x` | `^4 \|\| ^5` | `^7.1 \|\| ^8.0` |
+| (tags only) | `2.x` | `^3` | `^5.6 \|\| ^7.0` |
+
+`main` is the only maintained line: it supports every Silverstripe version this module still
+targets, so there is no separate maintenance branch. A version branch will be created only when a
+change cannot be made compatible across the supported range.
+
+**`composer.json` is the source of truth** for exact constraints; this table is a quick reference.
 
 ## Apply extension to desired pagetypes:
 

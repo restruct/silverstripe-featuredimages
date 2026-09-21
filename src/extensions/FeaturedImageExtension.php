@@ -69,7 +69,7 @@ class FeaturedImageExtension extends Extension
         $featImgField = $uploadFieldClass::create("FeaturedImages", _t("FeaturedImage.FeaturedImages", "Page Image(s)"));
         $featImgField->setFolderName(Config::inst()->get($this->owner->ClassName, 'upload_folder'));
         $featImgField->setAllowedFileCategories('image/supported');
-        $featImgField->setAllowedMaxFileNumber(Config::inst()->get($this->owner::class, 'max_featured_images'));
+        $featImgField->setAllowedMaxFileNumber(Config::inst()->get(get_class($this->owner), 'max_featured_images'));
 
         // if we have a Content field, insert before that -- else just append to Main tab
         if($fields->dataFieldByName("Content") instanceof FormField) {
