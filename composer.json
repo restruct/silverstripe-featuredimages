@@ -15,7 +15,7 @@
   },
   "require": {
     "php": "^7.4 || ^8.0",
-    "silverstripe/vendor-plugin": "^2 || ^3",
+    "silverstripe/vendor-plugin": "^1.6 || ^2 || ^3",
     "silverstripe/cms": "^4 || ^5 || ^6",
     "bummzack/sortablefile": "^2.2 || ^3"
   },
