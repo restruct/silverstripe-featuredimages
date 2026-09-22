@@ -143,7 +143,11 @@ class FeaturedImageExtension extends Extension
         $owner_class = $owner->ClassName;
 
         $HolderIDs = boolval($includeOwn) ? [ $owner->ID ] : [];
-        $HolderIDs += $recursively ? $owner->getDescendantIDList() : $owner->AllChildren()->column('ID');
+        $descendantIDs = $recursively ? $owner->getDescendantIDList() : $owner->AllChildren()->column('ID');
+        // array_merge, NOT `+=`: the union operator keeps the LEFT value for a duplicate KEY, so with
+        // $includeOwn the owner's ID at index 0 silently discarded the first child's ID.
+//        $HolderIDs += $recursively ? $owner->getDescendantIDList() : $owner->AllChildren()->column('ID');
+        $HolderIDs = array_merge($HolderIDs, $descendantIDs);
 
         return $owner_class::get()->byIDs($HolderIDs)->relation('FeaturedImages');
     }

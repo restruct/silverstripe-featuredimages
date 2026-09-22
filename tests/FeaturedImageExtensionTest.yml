@@ -1,0 +1,51 @@
+SilverStripe\Assets\Image:
+  imageA:
+    Title: Image A
+    FileFilename: assets/image-a.jpg
+  imageB:
+    Title: Image B
+    FileFilename: assets/image-b.jpg
+  imageC:
+    Title: Image C
+    FileFilename: assets/image-c.jpg
+
+Restruct\FeaturedImages\Tests\Stub\TestPage:
+  grandparentPage:
+    Title: Grandparent
+    Content: <p>Grandparent content</p>
+  parentPage:
+    Title: Parent
+    Content: <p>Parent content</p>
+    Parent: =>Restruct\FeaturedImages\Tests\Stub\TestPage.grandparentPage
+  childPage:
+    Title: Child
+    Content: <p>Child content</p>
+    Parent: =>Restruct\FeaturedImages\Tests\Stub\TestPage.parentPage
+  siblingPage:
+    Title: Sibling
+    Content: <p>Sibling content</p>
+    Parent: =>Restruct\FeaturedImages\Tests\Stub\TestPage.parentPage
+  grandchildPage:
+    Title: Grandchild
+    Content: <p>Grandchild content</p>
+    Parent: =>Restruct\FeaturedImages\Tests\Stub\TestPage.childPage
+  pageWithImages:
+    Title: Page with images
+    Content: <p>Some content</p>
+  pageWithoutImages:
+    Title: Page without images
+    Content: <p>Some content without a shortcode</p>
+  pageWithShortcode:
+    Title: Page with shortcode
+    Content: <p>Intro [featuredimage] outro</p>
+  pageWithUppercaseShortcode:
+    Title: Page with uppercase shortcode
+    Content: <p>Intro [FeaturedImage] outro</p>
+  pageWithoutContent:
+    Title: Page without content
+
+Restruct\FeaturedImages\Tests\Stub\TestObject:
+  objectWithoutImages:
+    Title: Object without images
+  objectWithImages:
+    Title: Object with images

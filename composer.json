@@ -7,11 +7,25 @@
     "image"
   ],
   "license": "BSD-3-Clause",
-  "authors": [ { "name": "Restruct", "email": "dev@restruct.nl", "homepage": "https://restruct.nl" } ],
+  "authors": [
+    {
+      "name": "Restruct",
+      "email": "dev@restruct.nl",
+      "homepage": "https://restruct.nl"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Restruct\\SilverStripe\\FeaturedImages\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Restruct\\FeaturedImages\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "silverstripe/recipe-testing": "^2 || ^3 || ^4"
   },
   "require": {
     "php": "^7.4 || ^8.0",
