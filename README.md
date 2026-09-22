@@ -13,8 +13,8 @@ or set of featured images (max amount configurable)
 
 ## Requirements
 
-* Silverstripe 4, 5 or 6
-* PHP 7.4 or newer
+* Silverstripe 5 or 6
+* PHP 8.1 or newer
 
 ## Installation
 
@@ -26,10 +26,13 @@ composer require restruct/silverstripe-featuredimages
 
 | Branch | Module version | Silverstripe | PHP |
 |--------|----------------|--------------|-----|
-| `main` | `4.1.x` and up | `^4 \|\| ^5 \|\| ^6` | `^7.4 \|\| ^8.0` |
+| `main` | `5.x` | `^5 \|\| ^6` | `^8.1` |
+| (tags only) | `4.1.x` | `^4 \|\| ^5 \|\| ^6` | `^7.4 \|\| ^8.0` |
 | (tags only) | `4.0.x` | `^6` | `^8.3` |
 | (tags only) | `3.x` | `^4 \|\| ^5` | `^7.1 \|\| ^8.0` |
-| (tags only) | `2.x` | `^3` | `^5.6 \|\| ^7.0` |
+
+Silverstripe 4 reached end of life in April 2025 and is no longer supported or tested here. Projects
+still on it should stay on the `3.x` or `4.1.x` tags, which remain available.
 
 `main` is the only maintained line: it supports every Silverstripe version this module still
 targets, so there is no separate maintenance branch. A version branch will be created only when a
@@ -65,7 +68,7 @@ through a Composer **path repository with `symlink: true`** - `/tests` is `expor
 or mirrored install contains no tests - add its test namespace to the host's `autoload-dev`, then:
 
 ```bash
-# Silverstripe 4 and 5 (PHPUnit 9) - the path must come before flush=1
+# Silverstripe 5 (PHPUnit 9) - the path must come before flush=1
 vendor/bin/phpunit vendor/restruct/silverstripe-featuredimages/tests flush=1
 
 # Silverstripe 6 (PHPUnit 11) - a flush=1 argument is ignored, use the env var
