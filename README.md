@@ -57,3 +57,20 @@ or
 <% loop $PageImages %>
     $Me
 <% end_loop %>
+
+## Running the tests
+
+The module cannot be tested on its own: it needs a host Silverstripe project. Require it there
+through a Composer **path repository with `symlink: true`** - `/tests` is `export-ignore`, so a dist
+or mirrored install contains no tests - add its test namespace to the host's `autoload-dev`, then:
+
+```bash
+# Silverstripe 4 and 5 (PHPUnit 9) - the path must come before flush=1
+vendor/bin/phpunit vendor/restruct/silverstripe-featuredimages/tests flush=1
+
+# Silverstripe 6 (PHPUnit 11) - a flush=1 argument is ignored, use the env var
+SS_PHPUNIT_FLUSH=1 vendor/bin/phpunit --testsuite featuredimages
+```
+
+CI runs the same suite against Silverstripe 4, 5 and 6 on every push; see
+`.github/workflows/ci.yml`.
