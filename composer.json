@@ -1,10 +1,14 @@
 {
   "name": "restruct/silverstripe-featuredimages",
-  "description": "Extension to quickly add a (set of) featured image(s) to a pagetype",
+  "description": "Add one or more featured images to any Silverstripe page type, with a configurable maximum",
   "type": "silverstripe-vendormodule",
   "keywords": [
     "silverstripe",
-    "image"
+    "silverstripe-module",
+    "silverstripe-cms",
+    "featured-image",
+    "image",
+    "page-type"
   ],
   "license": "BSD-3-Clause",
   "authors": [
